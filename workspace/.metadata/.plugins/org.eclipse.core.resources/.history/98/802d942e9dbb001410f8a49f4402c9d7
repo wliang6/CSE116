@@ -1,0 +1,192 @@
+package code;
+
+public class solution {
+	
+//Method 1 encoding .. A = N, B = 0, C = P, D = Q, E = R.. so forth
+	public static String encode (String s){
+		String coded = "";
+		for(int i=0; i<s.length(); i++){
+			char c = s.charAt(i);
+			if(c >= 'a' && c <= 'z'){
+				int z = c - 'a';     //finding the value of the letter 
+				z += 13;             //since A = N.. it starts on the 13th letter of the alphabet
+				z %= 26;             //loops around the alphabet after it finishes one cycle
+				c = (char)(z + 'a');
+				coded = coded + c;
+			}
+			else if(c>= 'A' && c<= 'Z'){
+				int z = c - 'A'; 
+				z += 13; 
+				z %= 26;
+				c = (char)(z + 'A');
+				coded = coded + c;
+			}
+			else{
+			   coded = coded + c; 
+			}
+		}
+		return coded;}
+	
+				
+//Method 2
+	public static String encode1 (String encode, String keyword){
+		String coded = "";
+		String newcode = helpermethodencode1(keyword);    //from helper method 1
+		for(int i=0; i<keyword.length();i++){
+			char c = keyword.charAt(i);
+			if(c>= 'A' && c<= 'Z'){
+				int value = c - 'A';
+				char z = newcode.charAt(value);    //pulling out characters from the new encrypted code; we SEE what the characters are in their certain positions
+				coded = coded + z; //basically the deciphering process of turning the first string "encode" into the new encrypted string using the newcode system we made
+			}
+			else{
+				coded = coded + c;  //any other characters besides the alphabet, you just include it (for ex. !, you include !)
+			}
+		}
+		return coded;
+	}
+	
+	public static String helpermethodencode1 (String abc){    //encoder
+		String cipher = "";
+		for(int i=0; i<abc.length();i++){
+			char c = abc.charAt(i);
+			cipher = cipher + c;                          
+		}
+		for(char c = 'A'; c <= 'Z'; c++){
+			if(charinString(c, abc) != true){     //
+				cipher = cipher + c;
+			}
+			}
+		return cipher;
+		}
+		
+	
+	public static boolean charinString(char c, String s){    //check if characters are in that particular string, then return true
+		for(int i=0; i<s.length(); i++){
+			if(c == s.charAt(i)){
+				return true;
+			}
+		}
+		return false;
+		
+	}
+
+	
+
+
+		
+		
+//Method 4
+	public static boolean anagram (String input1, String input2){
+		 int ln1=0;
+		 int ln2=0;
+		 input1.toLowerCase();
+		 input2.toLowerCase();
+		 int a=0;
+		 for(int i=0; i<input1.length(); i++){
+		 if(input1.charAt(i)!=' '){
+			 ln1++;
+		 }
+	}
+		 for (int i=0; i<input2.length(); i++){
+			 if(input2.charAt(i)!=' '){
+				 ln2++;	 
+			 }
+		 }
+		 for (int i=0; i<input1.length(); i++){	
+			 char ch=input1.charAt(i);
+			 if(isIn(input2,ch)){
+				 a++;
+		 }
+	 }	 
+		 if(ln1==ln2){		 
+			 if(ln1==a){	 
+				 return true;
+			 }
+		}
+		 return false;
+		 }
+		 
+		private static boolean isIn(String input2, char ch) {
+		if(ch!=' '){
+		 for (int i=0; i<input2.length(); i++){ 
+			 if(input2.charAt(i)==ch){
+				 return true;
+			 }
+		 }
+		 return false;
+	}
+	return false;
+}
+		
+			
+		
+
+//Method 5
+	public static int [] swap (int[] inputarray, int first, int second){
+
+			int temp = inputarray[first];
+			inputarray[first] = inputarray[second];
+			inputarray[second] = temp;
+		
+		return inputarray;
+		
+	}
+
+//Method 6
+	public static int[] zip(int[] array1, int[] array2) {
+		int[] zipped = new int [array1.length+array2.length];
+		for(int i=0; i<zipped.length; i+=2){
+			for(int j=0; j<array1.length; i++){
+				int first = array1[j];
+				int second = array2[j];
+				zipped[i] = first;
+				zipped[i+1] = second;
+			}
+		}
+			return zipped;
+		}
+		
+		
+		
+		
+		
+		/*int[] zipped = new int [array1.length + array2.length];
+		int max = Math.max(array1.length, array2.length);
+		int j=0, k=0, l=0;
+		for(int i=0; i<max; i++){
+			if(j<array1.length){
+				zipped[l++] = array1[i++];
+			if(k<array2.length){
+				zipped[l++] = array2[k++];
+			}
+		}
+	}
+			return zipped;
+		}*/
+		
+		
+		
+		
+
+		
+
+//Method 7
+	public static int [] merge(int[] array1, int[] array2, int [] merged) {
+		merged = new int [array1.length + array2.length];
+		int small = merged[0];
+		for(int i=0; i<merged.length; i++){
+			for(int j=0; j<array1.length; j++){
+				if(small > array1[i]){
+					small = array1[i];
+				}
+			}
+		}
+		return merged;
+		
+	
+		
+	}
+	
+	
+}

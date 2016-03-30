@@ -1,0 +1,41 @@
+package code;
+
+import java.util.HashMap;
+public class Submission {
+	
+	public HashMap<String, Integer> solution (String string){
+		String x = "";
+		HashMap<String, Integer> map = new HashMap<String, Integer> ();
+		CharacterFromFileReader cffr = new CharacterFromFileReader (string);
+		String s = readWord(cffr);
+		if(s != ""){
+				if(map.containsKey(s)){
+					map.put(s, 1);
+				}
+				else{
+					map.put(s, map.get(s) + 1);
+				}
+			
+		return map;
+	}
+	}
+
+	public String readWord (CharacterFromFileReader cffr){
+		String word = "";
+		char c = cffr.hasNext();
+		if(wordSeparator (c)){
+			return word;
+		}
+		else{
+			word = word + c;
+		}	
+		return word;
+	}
+
+	
+
+	private boolean wordSeparator(char c) {
+		return c == ' ';
+	}
+
+}

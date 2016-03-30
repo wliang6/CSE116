@@ -1,0 +1,5 @@
+package code;
+
+public interface Expression {
+	public Expression evaluate(Expression arg1, Expression arg2);
+}

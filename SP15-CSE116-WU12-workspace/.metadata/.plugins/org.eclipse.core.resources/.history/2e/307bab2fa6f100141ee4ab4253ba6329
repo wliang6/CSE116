@@ -1,0 +1,13 @@
+package code;
+
+public class Constant implements Expression {
+
+	private int _value;
+	
+	public Constant(int value) { _value = value; }
+	
+	@Override public Expression evaluate(Expression arg1, Expression arg2) {
+		return _value;
+	}
+
+}

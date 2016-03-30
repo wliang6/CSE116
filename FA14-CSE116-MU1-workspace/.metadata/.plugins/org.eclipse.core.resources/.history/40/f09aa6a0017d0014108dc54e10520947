@@ -1,0 +1,48 @@
+package tests;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.Arrays;
+import java.util.Random;
+
+import org.junit.Test;
+
+import code.SortedList;
+
+public class AddTests {
+	
+	public void genericTest(int... data) {
+		SortedList list = new SortedList();
+		for (int x : data) {
+			System.out.println("\nADDING "+x+" to "+list);
+			list.add(x);
+		}
+		int[] sorted = Arrays.copyOf(data, data.length);
+		Arrays.sort(sorted);
+		String expected = Arrays.toString(sorted);
+		String actual = list.toString();
+		assertTrue("I added "+Arrays.toString(data)+", expecting to get "+expected+", but I got "+actual,
+				expected.equals(actual));
+	}
+
+	@Test public void test_01() { genericTest(3); }
+	@Test public void test_02() { genericTest(3,4,5); }
+	@Test public void test_03() { genericTest(5,4,3); }
+	@Test public void test_04() { genericTest(5,-4,3); }
+	@Test public void test_05() { genericTest(-5,-4,-3); }
+	@Test public void test_06() { genericTest(0,0,0); }	
+	@Test public void test_07() { genericTest(randomIntegerArray(4,99)); }
+	@Test public void test_08() { genericTest(randomIntegerArray(4,99)); }
+	@Test public void test_09() { genericTest(randomIntegerArray(4,99)); }
+	@Test public void test_10() { genericTest(randomIntegerArray(4,99)); }
+	
+	static int[] randomIntegerArray(int howMany, int max) {
+		int[] array = new int[howMany];
+		Random r = new Random();
+		for (int i=0; i<howMany; i++) {
+			array[i] = r.nextInt(max);
+		}
+		return array;
+	}
+
+}

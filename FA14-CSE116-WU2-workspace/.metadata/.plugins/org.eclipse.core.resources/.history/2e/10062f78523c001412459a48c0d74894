@@ -1,0 +1,51 @@
+CSE116 Fall 2014 - WRITE-UP #2
+
+Define a method as described below.  Your method must be in a class that is
+defined in a named package (i.e. NOT the default package), as long as the package name
+is not 'tests' nor 'util'.
+
+/**************************************************************************
+ * @param s is a String (the sole parameter of the method)
+ * @return an int[] of size 3, containing the character counts as described 
+ * below.
+ *
+ * Definitions:
+ *
+ * [group0] A character ch is in group0 if and only if
+ *          ( 'a' <= ch AND ch <= 'z' ) OR ( 'A' <= ch AND ch <= 'Z' )  
+ *
+ * [group0A] The following characters are in group0A: 'o', 'l', 'i', 'v', and 'e'
+ *               as are their upper-case equivalents: 'O', 'L', 'I', 'V', and 'E'. 
+ *
+ * [group0B] A character which is in group0 but is not in group0A is in group0B.
+ *
+ * [group1] Any character which is not in group0 is in group1.
+ *
+ * The count of group0A characters must be in position 0 of the array,
+ * the count of group0B characters must be in position 1 of the array, and
+ * the count of group1 characters must be in position 2 of the array.
+ * 
+ * Some examples:
+ * 
+ * if s is "", then:
+ *     all entries in the array must be 0.
+ * if s is "o", then:
+ *     all entries in the array must be 0 except for entry 0, which must be 1.
+ * if s is "Green olive", then:
+ *     entry 0 of the array must be 7 (because there are seven members of group0A: 'e', 'e', 'o', 'l', 'i, 'v', 'e')
+ *     entry 1 of the array must be 3 (because there is one member of group0B: 'G', 'r', 'n'), and
+ *     entry 2 of the array must be 1 (because there is one member of group1: ' ' (the space character)).
+ * 
+ * The only methods you may call on the String s are charAt(int) and length().
+ *
+ * You may use the static toLowerCase method defined in the Character class,
+ * which maps a char to its lower-case equivalent.  For example,
+ *     Character.toLowerCase('a') returns 'a'
+ *     Character.toLowerCase('A') returns 'a'
+ *     Character.toLowerCase('B') returns 'b'
+ *     Character.toLowerCase('J') returns 'j'
+ *     Character.toLowerCase('%') returns '%'
+ * 
+ * You may, if you wish, define private helper methods that you call from your
+ * character counting method.
+ **************************************************************************/

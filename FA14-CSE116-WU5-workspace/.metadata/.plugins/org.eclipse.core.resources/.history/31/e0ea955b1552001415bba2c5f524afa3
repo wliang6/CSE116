@@ -1,0 +1,51 @@
+CSE116 WRITE-UP #4
+
+***************************************************************************
+** Academic Integrity reminder                                           **
+***************************************************************************
+** You are submitting this write-up for INDIVIDUAL CREDIT.  As such, you **
+** must work on it as an INDIVIDUAL.  To do otherwise is a violation of  **
+** academic integrity.                                                   **
+***************************************************************************
+
+GENERAL INSTRUCTIONS:
+--------------------
+Your task is to define a class named WriteUp, in a package named 'code', with
+one method as described below.  You are also to write your own tests.  Place
+your tests in a class named 'StudentTests', in a package named 'tests'.
+
+The functionality of your definitions will be verified by JUnit tests.
+IMPORTANT: note that if the methods are simply stubbed out (just return true or
+false) then the all the tests for that method will fail.  You must provide a
+non-stub implementation in order for the tests to have a chance of passing.
+
+HOMEWORK-SPECIFIC INSTRUCTIONS:
+------------------------------
+
+A description of the required (public) method:
+
+/**************************************************************************
+ * @param a String denoting the inputPath the path on the local filesystem
+ *        to the input file
+ * @returns a HashMap<String,Integer> containing the word->count mappings
+ *
+ * This method must read the contents of a file (identified by inputFilePath),
+ * one char at a time, find the authors in the file, and keep track of author
+ * counts in a java.util.HashMap<String,Integer>. 
+ * 
+ * An author is defined as a contiguous sequence of characters that appear
+ * between the opening {A} and corresponding closing {a} tags.
+ *
+ * You MUST use the state-transition approach (explained in recitation last
+ * week) for solving this problem, since learning this technique was part of
+ * the goal of this homework.
+ *
+ * You MUST also draw a suitable state-transition diagram for your solution,
+ * and hand it in at the conclusion of your write-up.
+ *   
+ * You must use only CharacterFromFileReader to read characters from the input
+ * file.
+ *
+ * Write your JUnit tests in a class named StudentTests in a package named tests.
+ *
+ **************************************************************************/

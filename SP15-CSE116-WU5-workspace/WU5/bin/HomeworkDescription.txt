@@ -1,0 +1,139 @@
+Write a method named 'solution' (in a class named 'Submission', in a package
+called 'code') which accepts a String as an argument and returns an int as
+result.  The required functionality of this method is described below.
+
+Also write JUnit tests for this method; put your tests in a class named
+'StudentTests' in a package named 'tests'.
+
+You may assume that the argument to the method will be a String of length >= 0,
+consisting only of 'M' and 'X' characters.  Interpret these as instructions for
+a robot moving along a track in a factory: 'M' means "move distance 1 in the
+direction the robot is facing" and 'X' means "turn to face the opposite
+direction".
+
+The robot starts at position 0, facing east.  Your method must return the
+number of timesteps when the robot was at position 0 (where each instruction
+takes one timestep to carry out).
+
+EXAMPLES
+-----------------------------------------------------------------------------
+1) Starting in position 0 facing east,
+
+        Robot:      >
+        Index:  -1  0   1    2   3
+
+if given the instruction sequence "M" the robot
+
+    - moves distance 1 to the east, to end up at position 1 facing east,
+
+        Robot:          >
+        Index:  -1  0   1    2   3
+    
+In this case the correct answer to give is 1, since the robot started at
+0.
+
+-----------------------------------------------------------------------------
+2) Starting in position 0 facing east,
+
+        Robot:      >
+        Index:  -1  0   1    2   3
+
+if given the instruction sequence "MX" the robot
+
+    - moves distance 1 to the east, to end up at position 1 facing east,
+
+        Robot:          >
+        Index:  -1  0   1    2   3
+
+    - turns around to face west,
+
+        Robot:          <
+        Index:  -1  0   1    2   3
+
+In this case the correct answer to give is 1, since the robot started at
+0, but never returned to this same position.
+
+-----------------------------------------------------------------------------
+3) Starting in position 0 facing east,
+
+        Robot:      >
+        Index:  -1  0   1    2   3
+
+if given the instruction sequence "MXMM" the robot
+
+    - moves distance 1 to the east, to end up at position 1 facing east,
+
+        Robot:          >
+        Index:  -1  0   1    2   3
+
+    - turns around to face west,
+
+        Robot:          <
+        Index:  -1  0   1    2   3
+
+    - moves distance 1 to the west, to end at at position 0 facing west,
+
+        Robot:      <    
+        Index:  -1  0   1    2   3
+
+    - moves distance 1 to the west, to end at at position -1 facing west.
+
+        Robot:   <       
+        Index:  -1  0   1    2   3
+
+In this case the correct answer to give is 2, since the robot started at
+0 and move back to it once.
+
+-----------------------------------------------------------------------------
+4) Starting in position 0 facing east,
+
+        Robot:      >
+        Index:  -1  0   1    2   3
+
+if given the instruction sequence "MXMMXM" the robot
+
+    - moves distance 1 to the east, to end up at position 1 facing east,
+
+        Robot:          >
+        Index:  -1  0   1    2   3
+
+    - turns around to face west,
+
+        Robot:          <
+        Index:  -1  0   1    2   3
+
+    - moves distance 1 to the west, to end at at position 0 facing west,
+
+        Robot:      <    
+        Index:  -1  0   1    2   3
+
+    - moves distance 1 to the west, to end at at position -1 facing west.
+
+        Robot:   <       
+        Index:  -1  0   1    2   3
+
+    - turns around to face east,
+
+        Robot:   >       
+        Index:  -1  0   1    2   3
+
+    - moves distance 1 to the east, to end at at position 0 facing east,
+
+        Robot:      >    
+        Index:  -1  0   1    2   3
+
+In this case the correct answer to give is 3, since the robot started at
+0 and move back to it twice.
+
+
+-----------------------------------------------------------------------------
+5) Starting in position 0 facing east,
+
+        Robot:      >
+        Index:  -1  0   1    2   3
+
+if given the instruction sequence "" the robot does nothing.  In this case
+the correct answer to give is 1, since the robot started at 0 but did not
+move.
+
+-----------------------------------------------------------------------------

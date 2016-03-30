@@ -1,0 +1,36 @@
+Write a method named 'solution' (in a class named 'Submission', in a package
+called 'code') which accepts a String as an argument and returns a
+HashMap<String,Integer> as result.  The required functionality of this method
+is described below.
+
+You may assume that the argument to the method will be a String of length > 0,
+consisting only of lower-case alphabetic characters and the space character.
+The String consists of a sequence of space-terminated words (where a word is a
+maximum-length sequence of lower-case alphabetic characters not containing a
+space).  For example, in this String,
+
+	"dog cat aardvark cat cat dog "
+	
+the unique words are "dog", "cat" and "aardvark".  The String will always end
+with a space character.
+
+Your method must keep track of how many times each word has been seen, in a
+HashMap<String,Integer>.  Recall that the relevant methods on such a HashMap
+are:
+
+	containsKey(String key) --> boolean: this method returns true if key
+		is in fact a key contained in the map, false otherwise.
+
+	put(String key,Integer value): this method adds the
+		indicated key to the map, paired with the indicated value. 
+	
+	get(String key) --> Integer: this method returns the value associated
+		with the key, if any.
+		
+For example, if the input String is,
+
+	"dog cat aardvark cat cat dog "
+
+The HashMap<String,Integer> must contain the kay-value pairs ("dog",2),
+("cat",3) and ("aardvark",1).
+ 

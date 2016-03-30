@@ -1,0 +1,17 @@
+package tests;
+
+import java.util.HashMap;
+
+import org.junit.Test;
+
+import code.WriteUp;
+
+public class StudentTests {
+
+	@Test public void test() {
+		WriteUp wu = new WriteUp();
+		HashMap<String,Integer> map = wu.solution("SampleInputFile1.xml");
+		
+	}
+	
+}

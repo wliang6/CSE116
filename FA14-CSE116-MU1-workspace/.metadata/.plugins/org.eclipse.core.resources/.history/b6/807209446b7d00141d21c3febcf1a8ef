@@ -1,0 +1,9 @@
+package code;
+
+public class MU1Exercise {
+	public int [] names (String b);
+	int [] array = new int [6];
+	for(i=0; i<b.length; i++){
+		
+	}
+}

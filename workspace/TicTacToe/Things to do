@@ -1,0 +1,5 @@
+Things to do:
+1. Enforce valid placement so you can't overwrite other players' moves (don't be that guy..)
+2. Create some way to detech wins
+3. When a player wins, print the winner's mark, and exit.
+4. When the board is full and there are no winnders, print that the game ended in a draw and exit.

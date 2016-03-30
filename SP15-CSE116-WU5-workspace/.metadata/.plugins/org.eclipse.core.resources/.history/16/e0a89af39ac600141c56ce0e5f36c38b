@@ -1,0 +1,22 @@
+package tests;
+import static org.junit.Assert.*;
+import org.junit.Test;
+import code.Submission;
+
+public class StudentTests {
+	
+@Test
+public void commoncode(String s, int expected){
+	int actual = Submission.solution(s);
+	assertTrue("", expected == actual);
+	}
+
+public void tests(){
+	commoncode("M", 1);
+	commoncode("MX", 1);
+	commoncode("MXMM", 2);
+	commoncode("MXMMXM", 3);
+	commoncode("", 1);
+}
+
+}

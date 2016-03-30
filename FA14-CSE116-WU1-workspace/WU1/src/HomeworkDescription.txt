@@ -1,0 +1,31 @@
+CSE116 - WRITE-UP #1
+
+Define a method named 'solution', in a class named 'WriteUp', in a package named 'code',
+as follows:
+
+	/**
+	 * @param s, a String
+	 * @param c, a character
+	 * @return true if c occurs 2 or more times in a row
+	 *         false otherwise 
+	 *  
+	 * Keep in mind that the String s could be null,
+	 * or a reference to *any* valid Java String.
+	 * 
+	 * Here are some examples:
+	 * 
+	 * solution(null,'a') must return false
+	 *
+	 * solution("",'a') must return false
+	 *
+	 * solution("an aardvark is able",'a') must return true (since 'a'
+	 *   occurs next to 'a' in 'aardvark')
+	 *
+	 * solution("b..b..blistering blue barnacles",'b') must return false
+	 *
+	 * solution("AAAb",'a') must return false (since 'A' != 'a')
+	 * 
+	 * solution("AAAb",'A') must return true
+	 * 
+	 * The only methods you may call on the String s are charAt(int) and length().
+	 */

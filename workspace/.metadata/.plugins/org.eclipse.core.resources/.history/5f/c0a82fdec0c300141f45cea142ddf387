@@ -1,0 +1,26 @@
+package tests;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+
+import code.Player;
+import code.Tile;
+import code.TileInventory;
+import code.Board;
+import code.TileRack;
+
+public class PlayerTests {
+	
+	private Player p = new Player("Bob");
+	private TileInventory i = new TileInventory();
+	private Tile q = new Tile();
+	private TileRack r = new TileRack();
+	private Board b = new Board();
+
+	@Test
+	public void doesPlayerKnowsitsScore (){
+		p.setScore(10);
+		assertTrue("", p.getScore() == 10);
+	    
+	}
+	
+}

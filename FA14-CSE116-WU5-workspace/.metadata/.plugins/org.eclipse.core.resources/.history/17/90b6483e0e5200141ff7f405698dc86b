@@ -1,0 +1,16 @@
+package code;
+
+import java.util.HashMap;
+
+import util.general.CharacterFromFileReader;
+
+public class WriteUp {
+	
+	public HashMap<String,Integer> solution(String filename) {
+		HashMap<String,Integer> map = new HashMap<String,Integer>();
+		CharacterFromFileReader reader = new CharacterFromFileReader(filename);
+		map.put("Fred",0);
+		return map;
+	}
+
+}

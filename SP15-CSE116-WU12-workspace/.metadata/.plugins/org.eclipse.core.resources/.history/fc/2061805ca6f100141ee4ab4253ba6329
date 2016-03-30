@@ -1,0 +1,27 @@
+package code;
+
+import code.BRStruct.IAlgo;
+
+/**
+ * A visitor for a BRStruct<e> that returns the value of the expression.
+ * An expression is defined as follows:
+ * 
+ * an integer constant is an expression
+ * <e1> + <e2> is an expression if <e1> and <e2> are both expressions; its value is the sum of the values of <e1> and <e2>
+ * <e1> - <e2> is an expression if <e1> and <e2> are both expressions; its value is the difference of the values of <e1> and <e2>
+ * <e1> * <e2> is an expression if <e1> and <e2> are both expressions; its value is the product of the values of <e1> and <e2>
+ * <e1> / <e2> is an expression if <e1> and <e2> are both expressions; its value is the quotient of the values of <e1> and <e2>
+ * <e1> % <e2> is an expression if <e1> and <e2> are both expressions; its value is the remainder of the the division of the values of <e1> and <e2>
+ * 
+ * The implementation below is incomplete.  Finish it.
+ */
+public class Visitor implements IAlgo<Expression, Expression, Void> {
+	
+	@Override public Integer emptyCase(BRStruct<Expression> host, Void arg) {
+		return null;
+	}
+
+	@Override public Integer nonEmptyCase(BRStruct<Expression> host, Void arg) {
+		return host.getDatum().evaluate(host.getLeft().execute(this,arg), host.getRight().execute(this,arg));
+	}
+}

@@ -1,0 +1,13 @@
+package code;
+
+import java.util.HashMap;
+
+public class WriteUp {
+	
+	public HashMap<String,Integer> solution(String filename) {
+		HashMap<String,Integer> map = new HashMap<String,Integer>();
+		map.put("Fred",-1);
+		return map;
+	}
+
+}

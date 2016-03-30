@@ -1,0 +1,41 @@
+package tests;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import code.Solution;
+
+
+public class tests {
+	
+	@Test
+	public void test0(){
+		commonCode("meat", 1);
+	}
+
+	@Test
+	public void test1(){
+		commonCode("carl", 0); //instead of a messy code, you use the commonCode test
+	}
+	
+	@Test
+	public void test2(){
+		commonCode("carlito", 0);
+	}
+	
+	@Test
+	public void test3(){
+		commonCode("", 0);
+	}
+	
+	
+	//make sure you don't add the '@Test'
+	public void commonCode(String testString, int expected){ //testString and expected are made into parameter
+		Solution solution = new Solution();
+		int actual = solution.count_e(testString);
+		assertTrue("I expected count_e to return " + expected + "given an argument of \"" + 
+				    testString + "\", " + "but instead I got " + actual + ".", actual == expected);
+	}
+	
+}

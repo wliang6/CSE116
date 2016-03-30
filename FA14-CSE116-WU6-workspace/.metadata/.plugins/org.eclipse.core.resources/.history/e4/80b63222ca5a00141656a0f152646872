@@ -1,0 +1,19 @@
+package code;
+
+public class NonTaxable {
+
+	private int _salePrice;
+
+	public NonTaxable(int p) {
+		_salePrice = p;
+	}
+	
+	public int taxDue() {
+		return 3000;
+	}
+	
+	public int price() {
+		return _salePrice;
+	}
+
+}

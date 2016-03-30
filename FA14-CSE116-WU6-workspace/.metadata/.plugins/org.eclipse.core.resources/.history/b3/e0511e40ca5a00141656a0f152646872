@@ -1,0 +1,41 @@
+package code;
+
+import java.util.HashSet;
+
+public class Cart {
+	
+	private HashSet<Taxable> _taxable;
+	private HashSet<NonTaxable> _nonTaxable;
+	
+	public Cart() {
+		_taxable = new HashSet<Taxable>();
+		_nonTaxable = new HashSet<NonTaxable>();
+	}
+	
+	public int taxDue() {
+		int ans = 0;
+		for (Taxable item : _taxable) {
+			ans = ans + item.taxDue();
+		}
+		return ans;   // Changed "return 0;" to "return ans;".... Returning O means returning a value of 0 and does not return the actual value of what we are looking for
+	}
+	
+	public int subTotal() {
+		int ans = 0;
+		for (Taxable item : _taxable) {
+			ans = ans + item.price() +taxDue();
+		}
+		for (NonTaxable item : _nonTaxable) {
+			ans = ans + item.price();
+		}
+		return ans;
+	}
+
+	public void add(Taxable item) {
+		_taxable.add(new Taxable(10000)); // Changed "add(item)" to "add(new Taxable(10000))" because this method is for Taxable and not for NonTaxable
+	}
+
+	public void add(NonTaxable item) {
+		_nonTaxable.add(item);
+	}
+}

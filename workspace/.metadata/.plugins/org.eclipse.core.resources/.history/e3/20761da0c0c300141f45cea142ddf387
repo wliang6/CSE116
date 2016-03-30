@@ -1,0 +1,24 @@
+package tests;
+
+import org.junit.Test;
+
+import code.Player;
+import code.Tile;
+import code.TileInventory;
+import code.Board;
+import code.TileRack;
+
+public class PlayerTests {
+	
+	private Player p = new Player();
+	private TileInventory i = new TileInventory();
+	private Tile q = new Tile();
+	private TileRack r = new TileRack();
+	private Board b = new Board();
+
+	public void doesPlayerKnowsitsScore (){
+		int score = 0;
+	    
+	}
+	
+}

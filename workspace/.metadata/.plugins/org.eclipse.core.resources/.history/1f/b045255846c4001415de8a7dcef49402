@@ -1,0 +1,52 @@
+package tests;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+
+import code.Player;
+import code.Tile;
+import code.TileInventory;
+import code.Board;
+import code.TileRack;
+
+public class PlayerTests {
+	
+	private Player p = new Player();
+
+
+	@Test
+	public void playerHasAName (){
+		p.setName("Bob");
+		assertTrue("", p.getName() == "Bob");
+	}
+	
+	@Test
+	public void playerHasNoName (){
+		p.setName(null);
+		assertTrue("", p.getName() == null);
+	}
+	
+	
+	@Test
+	public void playerHasAScore (){
+		p.setScore(10);
+		assertTrue("", p.getScore() == 10);
+	}
+	
+	@Test
+	public void playersInitialScore (){
+		p.setScore(0);
+		assertTrue("", p.getScore() == 0);
+	}
+	
+	//Commoncode
+	public void wordScoreCalculation (String s, int expected){
+		int actual = Player.ScoreFromBoard(s);
+		assertTrue("The score of this word is expected to be " + expected + " but " + 
+					"was calculated instead.", expected == actual);
+	}
+	
+	public void wordScoreTest1(){ wordScoreCalculation("DOG", 11);
+
+		
+	}
+}

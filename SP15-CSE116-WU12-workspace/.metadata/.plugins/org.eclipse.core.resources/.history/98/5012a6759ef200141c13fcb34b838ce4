@@ -1,0 +1,60 @@
+package code;
+
+
+public class Submission {
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+	 *                                                                                       *
+	 * YOUR JOB: Study the code below, run the tests (in tests package), and correct the     *
+	 * bug.  There is just one bug.  Once the bug is corrected the tests will all pass.      *
+	 *                                                                                       *
+	 * Be sure to SAVE YOUR WORK, then submit to Web-CAT.                                    *
+	 *                                                                                       *
+	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+	/**
+	 * A method to compute the starting index of the longest sequence of numbers in the input array which is 
+	 * monotonically increasing.  If there are multiple sequences of the longest length, return the starting
+	 * index of the one with smallest starting index.
+	 * 
+	 * From Wikipedia [en.wikipedia.org/wiki/Sequence]:
+	 * 
+	 * 	   A sequence is said to be monotonically increasing if each term is greater than or equal to the one before it.
+	 * 
+	 * Mathematically, we say a sequence x[i], i=B...E is monotonically increasing if and only if
+	 * for every k such that B < k <= E, x[k-1] <= x[k], when (E-B)> 1.
+	 * If (E-B)=1, then the sequence is considered monotonically increasing by definition.
+	 * If (E-B)=0, then the correct answer to give is -1 (i.e. if the input is an empty array, return -1).
+	 *
+	 * 
+	 * @Param input
+	 * @return the starting index of the longest monotonically increasing sequence
+	 */
+	public static int startOfLongestMonoIncSequence(int[] input) {
+		// keep track of the longest sequence seen so far
+		int oldStartIndex = -1;
+		int oldEndIndex = -1;
+		// use to find a potentially longer sequence
+		int newStartIndex = 0;
+		int newEndIndex = 1;
+		// outer while loop: keep searching for sequences as long as we have not gotten to end of array
+		while (newEndIndex < input.length) {
+			// inner while loop: locating the end of sequence that starts at newStartIndex
+			while (newEndIndex < input.length && input[newStartIndex] > input[newEndIndex]) {
+				newEndIndex++;
+			}
+			// got to end of this new sequence, so check to see if it is longer than old sequence
+			if ((newEndIndex-newStartIndex) > (oldEndIndex-oldStartIndex)) {
+				// if longer sequence found, update old start and end indices
+				oldStartIndex = newStartIndex;
+				oldEndIndex = newEndIndex;
+			}
+			// reset new start and end indices to search determine length of next sequence
+			newStartIndex = newEndIndex;
+			newEndIndex = newEndIndex+1;
+		}
+		// this is the starting index of the longest sequence we encountered
+		return oldStartIndex;
+	}
+	
+}

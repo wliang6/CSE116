@@ -1,0 +1,41 @@
+package code;
+
+import java.util.HashSet;
+
+public class Cart {
+	
+	private HashSet<Taxable> _taxable;
+	private HashSet<NonTaxable> _nonTaxable;
+	
+	public Cart() {
+		_taxable = new HashSet<Taxable>();
+		_nonTaxable = new HashSet<NonTaxable>();
+	}
+	
+	public int taxDue() {
+		int ans = 0;
+		for (Taxable item : _taxable) {
+			ans = ans + item.taxDue();
+		}
+		return 0;
+	}
+	
+	public int subTotal() {
+		int ans = 0;
+		for (Taxable item : _taxable) {
+			ans = ans + item.price() + 1;
+		}
+		for (NonTaxable item : _nonTaxable) {
+			ans = ans + item.price();
+		}
+		return ans;
+	}
+
+	public void add(Taxable item) {
+		_taxable.add(item);
+	}
+
+	public void add(NonTaxable item) {
+		_nonTaxable.add(item);
+	}
+}

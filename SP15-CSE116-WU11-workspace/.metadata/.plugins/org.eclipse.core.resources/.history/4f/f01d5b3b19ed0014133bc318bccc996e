@@ -1,0 +1,28 @@
+package code;
+
+import code.BRStruct.IAlgo;
+
+/**
+ * A visitor for a BRStruct<String> that returns the longest String it contains.
+ * You may assume that the longest String is unique (i.e. if the length of the 
+ * longest String is N, there will be only one String of length N).
+ * 
+ * Assume that the correct answer to give for an empty tree is the empty String, "".
+ */
+public class Visitor implements IAlgo<String, String, Void> {
+	
+	@Override
+	public String emptyCase(BRStruct<String> host, Void arg) {
+		return "";
+	}
+
+	@Override
+	public String nonEmptyCase(BRStruct<String> host, Void arg) {
+		String longest = host.getRight().execute(this, arg);
+		String rest = host.getLeft().execute(this, arg);
+		if (longest.length()> rest.length()){
+			return host.getDatum();
+		}
+		return null;
+	}
+}

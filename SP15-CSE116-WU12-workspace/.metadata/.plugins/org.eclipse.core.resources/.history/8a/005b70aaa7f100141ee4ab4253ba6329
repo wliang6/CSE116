@@ -1,0 +1,5 @@
+package code;
+
+public class Difference implements Expression {
+	@Override public Integer evaluate(Integer arg1, Integer arg2) { return arg1 + arg2; }
+}

@@ -1,0 +1,40 @@
+package code;
+
+import java.util.HashMap;
+public class Submission {
+
+	public HashMap<String, Integer> solution (String string){
+		String s = "";
+		HashMap<String, Integer> map = new HashMap<String, Integer> ();
+		for(int i=0; i<s.length(); i++){
+			String x = readWord(s);
+				if(!map.containsKey(x)){
+					map.put(x, 1);
+				}
+				else{
+					map.put(x, map.get(x) + 1);
+				}
+			}
+		return map;
+	}
+
+	public String readWord (String s){
+		String word = "";
+		for(int i = 0; i<word.length(); i++){
+		char c = word.charAt(i);
+		if(wordSeparator (c)){
+			return word;
+		}
+		else{
+			word = word + c;
+		}	
+	}
+		return word;
+}
+
+	
+
+	private boolean wordSeparator(char c) {
+		return c == ' ';
+	}	
+}

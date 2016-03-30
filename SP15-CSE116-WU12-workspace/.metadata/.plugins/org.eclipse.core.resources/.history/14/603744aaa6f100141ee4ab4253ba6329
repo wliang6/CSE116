@@ -1,0 +1,15 @@
+package code;
+
+public class Constant implements Expression {
+
+	public final int _value;  // final allows just one assignment in constructor
+	
+	public Constant(int value) {
+		_value = value;
+	}
+	
+	@Override public Expression evaluate(Expression arg1, Expression arg2) {
+		return this; 
+	}
+
+}

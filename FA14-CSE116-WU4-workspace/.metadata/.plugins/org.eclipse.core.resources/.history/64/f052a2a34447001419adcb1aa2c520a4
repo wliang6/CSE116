@@ -1,0 +1,87 @@
+package tests;
+
+import static org.junit.Assert.assertTrue;
+
+import javax.swing.JLabel;
+
+import org.junit.Test;
+
+import code.WriteUp;
+
+public class WriteUpTests {
+
+	@Test public void test00() {
+		String[][] a = {{"a","b"},{null,"d"}};
+		boolean[][] exp = {{false,false},{true,false}};
+		boolean[][] act = new WriteUp<String>().solution(a);
+		assertTrue("For input \n"+toString(a)+" the expected answer was \n"+toString(exp)+"but actual answer was \n"+toString(act),matrixEq(exp,act));
+	}
+
+	@Test public void test01() {
+		String[][] a = {{"a","b","c"},{"d","e","f"}};
+		boolean[][] exp = {{false,false,false},{false,false,false}};
+		boolean[][] act = new WriteUp<String>().solution(a);
+		assertTrue("For input \n"+toString(a)+" the expected answer was \n"+toString(exp)+"but actual answer was \n"+toString(act),matrixEq(exp,act));
+	}
+
+	@Test public void test02() {
+		String[][] a = {{"a",null},{null,"d"}};
+		boolean[][] exp = {{false,true},{true,false}};
+		boolean[][] act = new WriteUp<String>().solution(a);
+		assertTrue("For input \n"+toString(a)+" the expected answer was \n"+toString(exp)+"but actual answer was \n"+toString(act),matrixEq(exp,act));
+	}
+
+	@Test public void test03() {
+		String[][] a = {{"a","b"},{"c","d"},{"e","f"}};
+		boolean[][] exp = {{false,false},{false,false},{false,false}};
+		boolean[][] act = new WriteUp<String>().solution(a);
+		assertTrue("For input \n"+toString(a)+" the expected answer was \n"+toString(exp)+"but actual answer was \n"+toString(act),matrixEq(exp,act));
+	}
+
+	@Test public void test04() {
+		JLabel[][] a = {{new JLabel("a"),new JLabel("b")},{new JLabel("c"),null},{new JLabel("e"),new JLabel("f")}};
+		boolean[][] exp = {{false,false},{false,true},{false,false}};
+		boolean[][] act = new WriteUp<JLabel>().solution(a);
+		assertTrue("For input \n"+toString(a)+" the expected answer was \n"+toString(exp)+"but actual answer was \n"+toString(act),matrixEq(exp,act));
+	}
+
+	private <T> String toString(T[][] a) {
+		StringBuffer sb = new StringBuffer();
+		sb.append("[ ");
+		for (int i=0; i<a.length; i++) {
+			sb.append("[ ");
+			for(int j=0; j<a[i].length; j++) {
+				sb.append(a[i][j]+" ");
+			}
+			sb.append("]\n");
+		}
+		sb.append("]\n");
+		return sb.toString();
+	}
+
+	private String toString(boolean[][] a) {
+		StringBuffer sb = new StringBuffer();
+		sb.append("[ ");
+		for (int i=0; i<a.length; i++) {
+			sb.append("[ ");
+			for(int j=0; j<a[i].length; j++) {
+				sb.append(a[i][j]+" ");
+			}
+			sb.append("]\n");
+		}
+		sb.append("]\n");
+		return sb.toString();
+	}
+	
+	private boolean matrixEq(boolean[][] exp, boolean[][] act) {
+		for (int i=0; i<exp.length; i++) {
+			for(int j=0; j<exp[i].length; j++) {
+				if ( exp[i][j] != act[i][j] ) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+}

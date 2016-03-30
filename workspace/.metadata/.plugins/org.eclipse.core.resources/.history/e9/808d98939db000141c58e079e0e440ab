@@ -1,0 +1,88 @@
+package tests;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import code.Solution;
+
+
+public class tests {
+	
+	@Test
+	public void test0(){
+		commonCode("meat", 1);
+	}
+
+	@Test
+	public void test1(){
+		commonCode("carl", 0); //instead of a messy code, you use the commonCode test
+	}
+	
+	@Test
+	public void test2(){
+		commonCode("carlito", 0);
+	}
+	
+	@Test
+	public void test3(){
+		commonCode("", 0);
+	}
+	
+	
+	
+	//make sure you don't add the '@Test' because this is not a test method, but a main method
+	public void commonCode(String testString, int expected){ //testString and expected are made into parameter
+		Solution solution = new Solution();
+		int actual = solution.count_e(testString);
+		assertTrue("I expected count_e to return " + expected + "given an argument of \"" + 
+				    testString + "\", " + "but instead I got " + actual + ".", actual == expected);
+	}
+	
+	
+	
+	
+	public void isPalindrome(String s, boolean expected){
+		Solution solution = new Solution();
+		boolean actual = solution.isPalindrome(s);
+		assertTrue("", actual == expected);
+	}
+	
+	@Test
+	public void test4(){
+		isPalindrome("abcdefg", false);
+	}
+	
+	@Test
+	public void test5(){
+		isPalindrome("oooooo", true);
+	}
+	
+	@Test
+	public void test6(){
+		isPalindrome("koook", true);
+	}
+	
+	public void defReplaceCharacters(String s, String t, String c, String expected){
+		Solution solution = new Solution();
+		String actual = solution.replaceCharacters(s);
+		assertTrue("", actual.equals(expected));
+	}
+	
+	@Test
+	public void test7(){
+		defReplaceCharacters("book", "oo", "??", "b??k");
+	}
+	
+	
+	public void replaceVowels(String string, String expected){
+		Solution solution = new Solution();
+		String actual = solution.replaceVowels(string);
+		assertTrue("", actual == expected);
+	}
+	
+	@Test
+	public void test8(){
+		replaceVowels("instructions", "*nstr*ct**ns");
+	}
+}

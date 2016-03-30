@@ -1,0 +1,44 @@
+package tests;
+import static org.junit.Assert.*; 
+
+import java.util.HashMap;
+
+import org.junit.Test;
+
+import code.solution;
+public class solutiontests {
+	
+	
+//Method 1 - 
+//common method
+public void drypaintsandwipe(String a, boolean expected){
+	solution s = new solution();
+	boolean actual = s.drypaintsandwipe(a);
+	assertTrue("", actual == expected);
+}
+	@Test
+	public void drypaintsandwipe_test1(){ drypaintsandwipe("DPSW", false);}
+	@Test 
+	public void drypaintsandwipe_test2(){ drypaintsandwipe("PDSW", true);}
+	@Test 
+	public void drypaintsandwipe_test3(){ drypaintsandwipe("SWP", true);}
+	@Test
+	public void drypaintsandwipe_test4(){ drypaintsandwipe("SWS", true);}
+	@Test
+	public void drypaintsandwipe_test5(){ drypaintsandwipe("SWPSW", true);}
+	@Test
+	public void drypaintsandwipe_test6(){ drypaintsandwipe("SWPD", true);}
+	
+}
+	
+	
+
+
+
+/**
+public void acceptmethod(String a, HashMap<String,Integer> expected){
+	HashMap<String,Integer> actual = solution.acceptmethod(a, expected);
+	assertTrue("", expected.equals(actual));
+}
+}
+*/

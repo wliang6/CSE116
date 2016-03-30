@@ -1,0 +1,82 @@
+package code;
+
+import java.util.Arrays;
+
+/**
+ * A list which maintains items in order 
+ * from smallest to largest.
+ */
+public class SortedList {
+	private int[] _list;
+	private int _size;
+	
+	public SortedList() {
+		_list = new int[1];
+		_size = 0;
+	}
+	
+	/**
+	 * YOUR TASK: DEFINE THIS METHOD.  IT IS USED BY add(int).
+	 * 
+	 * Determine the correct index at which to insert x,
+	 * so that numbers are maintained in order from smallest
+	 * (at index 0) to largest (at index _list.size()-1).
+	 * 
+	 * @param x - the number whose correct insertion index
+	 * is to be determined
+	 * 
+	 * HINT: You can do a simple linear search through _list.
+	 * 
+	 * HINT: Look at the InsertInOrder.pdf for a visual explanation
+	 * of what the method should do.  This picture shows a general case
+	 * where the elements are Strings.  You should assume that the
+	 * elements are Integers (so you can use '<' to compare).
+	 */
+	private int indexAtWhichToInsert(int x) {
+		// TODO CSE116 students: define this method.
+		return 0;
+	}
+
+	public void add(int x) {
+		if ((_size+1) >= _list.length) {
+			int[] temp = new int[_list.length*2];
+			for (int i=0; i<_list.length; i++) {
+				temp[i] = _list[i];
+			}
+			_list = temp;
+		}
+		int index = indexAtWhichToInsert(x);
+//		System.out.print(" at "+index+" in list with size "+_size);
+		for (int i=_size; i > index; i--) {
+//			System.out.println("copying "+_list[i-1]+" from "+(i-1)+" to "+(i));
+			_list[i] = _list[i-1];
+		}
+		_list[index] = x;
+		_size++;
+	}
+
+	public int removeSmallest() {
+		int smallest = _list[0];
+		for (int i=1; i<_list.length; i++) {
+			_list[i-1] = _list[i];
+		}
+		_size--;
+		return smallest;
+	}
+	
+	public int size() {
+		return _size;
+	}
+	
+	@Override public String toString() {
+		StringBuffer s = new StringBuffer("[");
+		for (int i=0; i<_size; i++) {
+			s.append(_list[i]);
+			s.append(", ");
+		}
+		if (_size>0) { s.delete(s.length()-2, s.length()); }
+		s.append("]");
+		return s.toString();
+	}
+	
+}

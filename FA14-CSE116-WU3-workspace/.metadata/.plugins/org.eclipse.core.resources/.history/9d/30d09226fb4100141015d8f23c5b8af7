@@ -1,0 +1,53 @@
+CSE116 Write-Up #3
+
+GENERAL INSTRUCTIONS:
+--------------------
+Your task is to define a class with one method, described below.
+
+Your class must be defined in a package 'code' placed in the 'src' folder.
+
+Your class must be named 'WriteUp'.
+
+Your method must be non-static and named 'solution'.  Its return type must be
+'HashMap<String,Integer>' and its parameter must be of type 'String'.  Your
+class must have a no-argument constructor. 
+
+The functionality of your definitions will be verified by JUnit tests.
+
+
+HOMEWORK-SPECIFIC INSTRUCTIONS:
+------------------------------
+
+A description of the required (public) method:
+
+	/**************************************************************************
+	 * @param a String denoting the inputPath the path on the local filesystem
+	 *        to the input file
+	 * @returns a HashMap<String,Integer> containing the word->count mappings
+	 *
+	 * This method must read the contents of a file (identified by inputFilePath),
+	 * one char at a time, segment the input into words, and keep track of word
+	 * counts in a java.util.HashMap<String,Integer>. 
+	 * 
+	 * A word is defined as a contiguous sequence of characters that does not
+	 * contain word separator characters, where word separator characters are:
+	 *   ' '   space
+	 *   '\n'  newline
+	 *   '\t'  tab
+	 *   ','   comma
+     *   '.'   period
+     *   ':'   colon
+     *   ';'   semicolons
+     * 
+     * Think carefully about this definition, and how it applies to an initial
+     * character sequence not preceded by a word separator, and also a final 
+     * character sequence not followed by a word separator.
+	 *   
+	 * You must use only CharacterFromFileReader to read characters from the input
+	 * file.  Use it as an Iterator<Character>, keeping in mind the autoboxing &
+	 * unboxing feature of the Java language.
+	 * 
+	 * In order to keep your code readable, break your code into several methods.
+	 * Define meaningful private helper methods that you call from the required
+	 * public method.
+	 **************************************************************************/

@@ -1,0 +1,8 @@
+package a;
+
+public class A {
+	public HashMap<String,Integer> foo(String s) {
+		s.length();
+		return null;
+	}
+}

@@ -1,0 +1,59 @@
+package code;
+
+import java.util.Arrays;
+
+import org.junit.Test;
+import static org.junit.Assert.assertTrue;
+
+public class Submission {
+
+	public static int startOfLongestMonoIncSequence(int[] input) {
+		// keep track of the longest sequence seen so far
+		int oldStartIndex = -1;
+		int oldEndIndex = -1;
+		// use to find a potentially longer sequence
+		int newStartIndex = 0;
+		int newEndIndex = 1;
+		// outer while loop: keep searching for sequences as long as we have not gotten to end of array
+		while (newEndIndex < input.length) {
+			// inner while loop: locating the end of sequence that starts at newStartIndex
+			while (newEndIndex < input.length && input[newStartIndex] < input[newEndIndex]) {
+				newEndIndex++;
+			}
+			// got to end of this new sequence, so check to see if it is longer than old sequence
+			if ((newEndIndex-newStartIndex) > (oldEndIndex-oldStartIndex)) {
+				// if longer sequence found, update old start and end indices
+				oldStartIndex = newStartIndex;
+				oldEndIndex = newEndIndex;
+			}
+			// reset new start and end indices to search determine length of next sequence
+			newStartIndex = newEndIndex;
+			newEndIndex = newEndIndex+1;
+		}
+		// this is the starting index of the longest sequence we encountered
+		return oldStartIndex;
+	}
+	
+	@Test public void test_01() {
+		int[] inp = {1,2,3,4,5,1,2,3,4,1,2,3,4,5,6};
+		commonTestCode(inp,9);
+	}
+	@Test public void test_02() {
+		int[] inp = {1,2,3,4,5,6,7,1,2,3,4,1,2,3,4,5,6};
+		commonTestCode(inp,0);
+	}
+	@Test public void test_03() {
+		int[] inp = {1,2,3,4,5,2,3,4,5,6,8,12,1,2,3,4,5,6};
+		commonTestCode(inp,5);
+	}
+	@Test public void test_04() {
+		int[] inp = {1,2,3,4,5,1,2,3,4,6,8,12,1,2,3,4,5,6};
+		commonTestCode(inp,5);
+	}
+	
+	public void commonTestCode(int[] input, int expected) {
+		int actual = WU12.startOfLongestMonoIncSequence(input);
+		assertTrue("Longest monotonically increasing sequence in "+Arrays.toString(input)+" starts at "+expected+", but your code thinks it starts at "+actual, expected == actual);
+	}
+
+}

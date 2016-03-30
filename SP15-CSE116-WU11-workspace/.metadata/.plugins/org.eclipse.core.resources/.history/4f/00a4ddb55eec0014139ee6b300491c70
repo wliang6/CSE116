@@ -1,0 +1,21 @@
+package code;
+
+import code.BRStruct.IAlgo;
+
+/**
+ * A visitor for a BRStruct<String> that returns the longest String it contains.
+ * 
+ * Assume that the correct answer to give for an empty tree is the empty String, "".
+ */
+public class Visitor implements IAlgo<String, String, Void> {
+	
+	@Override
+	public String emptyCase(BRStruct<String> host, Void arg) {
+		return null;
+	}
+
+	@Override
+	public String nonEmptyCase(BRStruct<String> host, Void arg) {
+		return null;
+	}
+}

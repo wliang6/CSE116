@@ -1,0 +1,29 @@
+CSE116 - WRITE-UP #4
+
+Define a method as described below.  Your method must be named 'solution', 
+and must be defined in a class named WriteUp, in a package named 'code'.
+
+/**************************************************************************
+ * @param IN is of type int[][]
+ * @return a value of type int[][] (call it OUT)
+ *
+ * This method returns a new matrix which is the transpose of the original.
+ * The transpose of a matrix A, called AT, is defined as:
+ * AT[i][j] = A[j][i]
+ * 
+ * For example, if IN is 
+ * 
+ * +--     --+
+ * | 3  5  7 |
+ * | 2  4  6 |
+ * +--     --+
+ *
+ * then OUT must be
+ *
+ * +--  --+
+ * | 3  2 |
+ * | 5  4 |
+ * | 7  6 |
+ * +--  --+
+ *
+ **************************************************************************/

@@ -1,0 +1,13 @@
+package code;
+
+public class WriteUp {
+public int [][] solution (int [][] a){
+	int [][] AB = new int [a[0].length][a.length];
+	for (int i = 0; i<a.length; i++){
+		for (int j = 0; j<a[0].length; j++){
+			AB [j][i] = a[i][j];
+		}
+	}
+	return AB;
+}
+}

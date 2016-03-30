@@ -1,0 +1,59 @@
+package code;
+
+public class Tile {
+
+		//TILE: have a representation of a tile. A tile knows its letter and its point value
+
+		/*public void _Tile(String letter){
+			int score = 0;
+//			char[] vowels = new char[]{ 'A', 'E', 'I', 'O', 'U'};
+//			char[] y = new char[]{'Y'};
+//			char[] constants = new char[]{'B', 'C', 'D', 'F', 'G', 'H', 'J',
+//					'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z'};
+			for(int i = 0; i<letter.length(); i++);
+				if(letter == "AEIOU"){
+					score= score + 1; */
+	
+	public static int ScrabbleScore(String word){
+		int score = 0;
+		for(int i=0; i<word.length(); i++){
+			char ch = word.charAt(i);
+			switch (ch){
+			case 'A':
+			case 'E':
+			case 'I':
+			case 'O':
+			case 'U':
+				score = score + 1;
+				break;
+			case 'B':
+			case 'C':
+			case 'D':
+			case 'F':
+			case 'G':
+			case 'H':
+			case 'J':
+			case 'K':
+			case 'L':
+			case 'M':
+			case 'N':
+			case 'P':
+			case 'Q':
+			case 'R':
+			case 'S':
+			case 'T':
+			case 'V':
+			case 'W':
+			case 'X':
+			case 'Z':
+				score = score + 5; 
+				break;
+			case 'Y':
+				score = score + 2;
+				break;
+			default: break;
+		}
+	}
+	return score;
+}
+	}

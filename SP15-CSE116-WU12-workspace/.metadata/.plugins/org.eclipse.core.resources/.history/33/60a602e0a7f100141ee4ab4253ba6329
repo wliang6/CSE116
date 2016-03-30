@@ -1,0 +1,7 @@
+package code.operations;
+
+import code.Expression;
+
+public class Remainder implements Expression {
+	@Override public Integer evaluate(Integer arg1, Integer arg2) { return arg1 / arg2; }
+}

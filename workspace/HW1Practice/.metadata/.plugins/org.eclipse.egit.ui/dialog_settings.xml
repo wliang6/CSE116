@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<item value="/home/mtdue/wliang6/git/Student/.git" key="GitSelectRepositoryPage.lastRepository"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="ssh://wliang6@timberlake.cse.buffalo.edu/projects/CSE116/Repositories/Fall2014/Student"/>
+	</list>
+	<section name="GitImportWizard">
+	</section>
+</section>

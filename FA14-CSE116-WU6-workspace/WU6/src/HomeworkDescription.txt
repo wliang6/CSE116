@@ -1,0 +1,25 @@
+CSE116 WRITE-UP #6
+
+***************************************************************************
+** Academic Integrity reminder                                           **
+***************************************************************************
+** You are submitting this write-up for INDIVIDUAL CREDIT.  As such, you **
+** must work on it as an INDIVIDUAL.  To do otherwise is a violation of  **
+** academic integrity.                                                   **
+***************************************************************************
+
+GENERAL INSTRUCTIONS:
+---------------------
+You are given three classes in the 'code' package, which are buggy, as well
+as some JUnit tests in the 'tests' package.
+
+Your task is to discover and correct the bugs in the three classes Cart.java,
+NonTaxable.java and Taxable.java, using the tests in CalculationTest.java to 
+guide you.
+
+Do NOT change the tests - they are correct. Initially 3 pass and 4 fail. Your
+goal is to get all of the tests to pass.
+
+ADD COMMENTS TO THE CODE TO DESCRIBE YOUR BUG FIXES.
+
+Submit to Web-CAT when finished.

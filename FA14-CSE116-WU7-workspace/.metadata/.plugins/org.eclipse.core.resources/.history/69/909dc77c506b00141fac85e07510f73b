@@ -1,0 +1,37 @@
+package code;
+
+import lrstruct.LRStruct;
+import lrstruct.LRStruct.IAlgo;
+
+/*
+ * Define this visitor so it operates on an LRStruct<Rational> and computes
+ * the product of all the Rational numbers in the LRStruct.
+ * 
+ * Note that the Rational class is defined for you in the code package.
+ * 
+ * The Rational class defines the public static variable ONE which refers
+ * to a Rational representation of the number 1.
+ * 
+ * The Rational class also defines the instance method mul(Rational that) which
+ * returns a new Rational number whose value is the product of this and that.
+ * 
+ * equals is overridden for Rational
+ * 
+ * Rational numbers are automatically kept in lowest terms.
+ */
+
+public class Visitor implements IAlgo<Rational, Rational, Object> {
+
+	@Override
+	public Rational emptyCase(LRStruct<Rational> host, Object arg) {
+		throw new IllegalStateException("Cannot get the rest of an empty LRStruct.");
+	}
+
+	@Override
+	public Rational nonEmptyCase(LRStruct<Rational> host, Object arg) {
+		LRStruct<Rational> list = new LRStruct<Rational>();
+		return host.getRest().execute(this, arg);
+		}
+	}
+
+

@@ -1,0 +1,44 @@
+package code;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class TileInventory {
+	
+	private ArrayList <Tile> tile;
+	
+	public TileInventory (){
+		tile = new ArrayList <Tile> ();
+		newTiles();
+		mixingLetters();
+	}
+	
+	public void newTiles() {
+		String allLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		for(int i=0; i< allLetters.length(); i++){
+			char ch = allLetters.charAt(i);
+			if(ch == 'A'){
+				for(int j=0; j<29; j++){
+					Tile t = new Tile();
+					t.setLetters(ch);
+					t.setScore(1);
+					tile.add(t);
+				}
+			}
+		}
+	}
+	public void mixingLetters(){
+		Collections.shuffle(tile);
+	}
+	
+	
+	public Tile getTile(){
+		Tile t = tile.get(0);
+		tile.remove(0);
+		return t;
+	}
+	
+	}
+	
+	
+

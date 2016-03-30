@@ -1,0 +1,59 @@
+package code;
+
+public class Homework1Practice {
+
+	public int count_e(String s){
+		int count = 0;
+		for(int i = 0; i < s.length(); i++){
+			if(s.charAt(i) == 'e'){
+				count++;				
+			}
+		}		
+		return count;		
+	}
+	
+	public int count_f(String s){
+		int count = 0;
+		for(int i = 0; i < s.length(); i++){
+			if(s.charAt(i) == 'f'){
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public int count_one_char(String s, char c){
+		int count = 0;
+		for(int i = 0; i < s.length(); i++){
+			if(s.charAt(i) == c){
+				count++;
+			}
+		}		
+		return count;
+	}
+	
+	public int count_two_chars(String s, char c1, char c2){
+		int count = 0;
+		for (int i = 0; i < s.length(); i++){
+			if(s.charAt(i) == c1){
+				count++;
+			}
+			if(s.charAt(i) == c2){
+				count++;
+			}			
+		}
+		return count;
+	}
+	
+	public int count_chars_in_String_test(String s1, String s2){
+		int count = 0;
+		for (int i = 0; i < s1.length(); i++){
+			for(int j = 0; j < s2.length(); i++){
+				if(s1.charAt(i) == s2.charAt(j)){
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+}

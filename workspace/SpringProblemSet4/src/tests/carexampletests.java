@@ -1,0 +1,25 @@
+package tests;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+import code.CarCarCatAccepter;
+
+public class carexampletests {
+	
+	@Test
+	public void whatever(){
+		commonCode("cat", true);
+		commonCode("carcat",true);
+		commonCode("carcarcat", true);
+		commonCode("", false);
+		commonCode("car", false);
+		commonCode("carcarcat", true);
+		
+	}
+	
+	public void commonCode(String input, boolean expected){
+		CarCarCatAccepter ccca = new CarCarCatAccepter();
+		assertTrue("I expected to accept( " + input + " to return " + 
+		expected, ccca.accept(input) == expected);
+	}
+}

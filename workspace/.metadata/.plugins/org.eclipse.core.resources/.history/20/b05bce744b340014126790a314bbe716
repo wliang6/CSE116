@@ -1,0 +1,26 @@
+package code;
+
+public class Homework1Practice {
+
+	public int count_e(String s){
+		int count = 0;
+		for(int i = 0; i < s.length(); i++){
+			if(s.charAt(i) == 'e'){
+				count++;				
+			}
+		}		
+		return count;		
+	}
+	
+	public int count_f(String s){
+		int count = 0;
+		for(int i = 0; i < s.length(); i++){
+			if(s.charAt(i) == 'f'){
+				count++;
+			}
+		}
+		return count;
+	}
+	
+
+}

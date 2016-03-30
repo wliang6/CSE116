@@ -1,0 +1,166 @@
+package code;
+
+import java.util.HashMap;
+
+import util.general.CharacterFromFileReader;
+
+
+public class Homework5Practice 
+{
+public HashMap<String, Integer> solution(String s)
+{
+CharacterFromFileReader cff = new CharacterFromFileReader(s);
+HashMap<String, Integer> map = new HashMap<String, Integer>();
+String a = "";
+int state = 0;
+while(cff.hasNext())
+{
+char c = cff.next();
+switch(state)
+{
+case 0:
+if(c=='<')
+{
+state = 1;
+}
+break;
+case 1:
+if(c=='A')
+{
+state = 2;
+}
+else if (c=='<')
+{
+state = 1;
+}
+else
+{
+state=0;
+}
+break;
+case 2:
+if(c=='U')
+{
+state=3;
+}
+else if(c=='<')
+{
+state=1;
+}
+else
+{
+state=0;
+}
+break;
+case 3:
+if(c=='>')
+{
+state=4;
+}
+else if(c=='<')
+{
+state=1;
+}
+else
+{
+state=0;
+}
+break;
+case 4:
+if(c=='<')
+{
+state = 5;
+}
+else
+{
+a+=c;
+}
+break;
+case 5:
+if(c=='/')
+{
+state = 6;
+}
+else if(c=='<')
+{
+state=5;
+a+='<';
+}
+else
+{
+a+='<';
+a+=c;
+state=4;
+}
+break;
+case 6:
+if(c=='A')
+{
+state = 7;
+}
+else if(c=='<')
+{
+state = 5;
+//a+='<'+'/';
+a+="</";
+}
+else
+{
+a+="</";
+a+=c;
+state=4;
+}
+break;
+case 7:
+if(c=='U')
+{
+state = 8;
+}
+else if(c=='<')
+{
+state = 5;
+a+="</A";
+}
+else
+{
+a+="</A";
+a+=c;
+state=4;
+}
+break;
+case 8:
+if(c=='>')
+{
+state=0;
+addToMap(map, a);
+a="";
+}
+else if(c=='<')
+{
+state=5;
+a+="</AU";
+}
+else
+{
+a+="</AU";
+a+=c;
+state=4;
+}
+break;
+}
+}
+return map;
+}
+
+public void addToMap(HashMap<String, Integer> h, String s)
+{
+if(h.containsKey(s))
+{
+h.put(s, h.get(s)+1);
+}
+else
+{
+h.put(s, 1);
+}
+}
+}

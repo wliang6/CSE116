@@ -1,0 +1,69 @@
+package code;
+public class Player {
+	String name;
+	int score;
+
+	player player1 = new player ();
+	player player2 = new player ();
+	player player3 = new player ();
+	
+	
+	public void setName(String name){
+		name = n;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public void setScore(int score){
+		score = s;
+	}
+	
+	public int getScore(){
+		return score;
+	}
+	
+	public boolean addTile(){        //adding tiles to player's tile-rack
+		int initialamount;
+		int n = 0; 
+		int newamount = initialamount + n;
+		if(initialamount < newamount){
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean removeTile(){      //removing tiles from player's tile-rack
+		int initialamount;
+		int n = 0;
+		int newamount = initialamount - n;
+		if(initialamount > newamount){
+			return true;
+		}
+		return false;
+		}
+	
+	
+	
+	public static int scoringcalculation(String word) {
+		int total = 0;
+		for(int i=0; i<word.length(); i++){
+			total = total + pointvalue(i);}     //this method would be from the tile class
+		return total;
+	}
+	
+	
+	public static int adjacentscoring(String a, String b) {
+		int total = 0;
+		for(int i=0; i<a.length(); i++){
+			for(int j=0; j<b.length(); j++){
+				
+			}
+			
+		return 0;
+	}
+	}
+}
+
+

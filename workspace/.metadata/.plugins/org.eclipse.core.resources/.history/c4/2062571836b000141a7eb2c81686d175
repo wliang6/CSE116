@@ -1,0 +1,89 @@
+package code;
+
+public class Solution {
+	public int count_e(String s){
+		int count = 0; 
+		for(int i = 0; i<s.length(); i++){
+			if(s.charAt(i) == 'e'){
+				count++;
+			}
+		}
+		return count;	
+	}
+	
+
+	
+	public int count_one_char(String s, char a){
+		int count = 0;
+		for(int i = 0; i<s.length(); i++){
+			if(s.charAt(i) == a){
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public int count_two_chars(String s, char a, char b){
+		int count = 0;
+		for(int i = 0; i<s.length(); i++){
+			if(s.charAt(i) == a){
+				count++;
+			}
+		}
+		for(int j = 0; j<s.length(); j++){
+			if(s.charAt(j) == b){
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public int count_chars_in_String(String s, String t){
+		int count = 0;
+		for(int i = 0; i<s.length(); i++){
+			for(int j = 0; j<t.length(); j++){
+				if(s.charAt(i) == t.charAt(j)){
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+	
+	public boolean isPalindrome(String s){
+		String reverse = "";
+		for(int i = 0; i <s.length(); i++){
+			reverse = reverse + s.charAt(i);
+			if(reverse.equals(s.charAt(i))){
+				return true;
+			}
+		}
+		return false;
+		
+	}
+	
+	
+	
+	public class ReplaceVowels {
+		public String Replacing(String input){
+			String replacement ="";
+			for(int i = 0; i<input.length(); i++){	
+					if(input.charAt(i) == 'a'||input.charAt(i) == 'e'
+							||input.charAt(i) == 'i'||input.charAt(i) == 'o'
+							||input.charAt(i) == 'u'||input.charAt(i) == 'A'
+							||input.charAt(i) == 'E'||input.charAt(i) == 'I'
+							||input.charAt(i) == 'O'||input.charAt(i) == 'U'){
+						
+						replacement = replacement + '*';
+						}		
+					else {
+						replacement = replacement + input.charAt(i);
+					}		
+		}
+			System.out.println(replacement);
+			return replacement;
+	}
+}
+}
+
+	
